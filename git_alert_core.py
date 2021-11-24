@@ -29,7 +29,7 @@ log_chat = config.CHAT_ID
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s - [FridayAssistant] - %(levelname)s - %(message)s",
+    format="%(asctime)s - [AlinaXAssistant] - %(levelname)s - %(message)s",
 )
 logging.getLogger("telethon").setLevel(logging.ERROR)
 logging.getLogger("apscheduler").setLevel(logging.ERROR)
