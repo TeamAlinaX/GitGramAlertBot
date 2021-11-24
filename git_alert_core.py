@@ -247,10 +247,10 @@ if config.HEROKU_APP_NAME:
 async def bot_(client, message):
     key_board = [
         InlineKeyboardButton(
-            text="Source Code", url="https://github.com/DevsExpo/GitAlertBot"
+            text="📄 Source Code", url="https://github.com/TeamAlinaX/GitGramAlertBot"
         ),
     ]
-    file = "https://i.makeagif.com/media/2-18-2016/M3yKm-.gif"
+    file = "https://te.legra.ph/file/79740aac5432ba43d4fb2.jpg"
     msg = f"__Hello__ {message.from_user.mention}. __I Am A Simple Git ALert Bot. I Notify In Chat When My Hook Gets Triggred From Github. You Can Find My Source Code on Github.com__"
     await message.reply_animation(
         file, caption=msg, quote=True, reply_markup=InlineKeyboardMarkup([key_board])
