@@ -1,18 +1,18 @@
 # ~~Yet Another~~ GitAlertBot
 
-## Inspired From [@Pokurt's GitGram](https://github.com/pokurt/GitGram/)
+## Inspired From [Dev-v2's GitGram](https://github.com/New-Dev3/GitGram-Bot/)
 
 ## Run Bot: 
 ### Local Host
 
 * Git Clone Repo :
-- For Telethon Version : `git clone https://github.com/DevsExpo/GitAlertBot -b telethon`
-- For Pyrogram Version : `git clone https://github.com/DevsExpo/GitAlertBot -b pyrogram`
+- For Telethon Version : `git clone https://github.com/TeamAlinaX/GitGramAlertBot -b telethon`
+- For Pyrogram Version : `git clone https://github.com/TeamAlinaX/GitGramAlertBot -b pyrogram`
 * Make `local.env` File With the Values As Shown Below : 
 ```
 API_ID=12222
-API_HASH="api_hash"
-BOT_TOKEN="bot_token"
+API_HASH="API_HASH"
+BOT_TOKEN="BOT_TOKEN"
 HOST="http://127.0.0.1"
 PORT=8000
 ```
@@ -30,7 +30,7 @@ PORT=8000
 * Happy Gitting :)
 #### Telethon Version 
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DevsExpo/GitAlertBot/blob/telethon)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TeamAlinaX/GitGramAlertBot/blob/telethon)
 
 #### Pyrogram
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DevsExpo/GitAlertBot/blob/pyrogram)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TeamAlinaX/GitGramAlertBot/blob/pyrogram)
