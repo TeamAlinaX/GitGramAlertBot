@@ -234,8 +234,8 @@ Total forks count is now: __{data['repository']['forks_count']} ⚡️__
 
 @gitbot.on(events.NewMessage(pattern="^(!|/)(start|help)$"))
 async def bot_(message):
-    key_board = [[Button.url("Source Code", "https://github.com/DevsExpo/GitAlertBot")]]
-    file = "https://i.makeagif.com/media/2-18-2016/M3yKm-.gif"
+    key_board = [[Button.url("Source Code", "https://github.com/TeamAlinaX/GitGramAlertBot")]]
+    file = "https://te.legra.ph/file/79740aac5432ba43d4fb2.jpg"
     msg = f"__Hello__ {message.sender.first_name}. __I Am A Simple Git ALert Bot. I Notify In Chat When My Hook Gets Triggred From Github. You Can Find My Source Code on Github.com__"
     await message.reply(
         file=file, message=msg, buttons=key_board
