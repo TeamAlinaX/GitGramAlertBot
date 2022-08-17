@@ -1,6 +1,6 @@
 # ~~Yet Another~~ GitAlertBot
 
-## Inspired From [Dev-v2's GitGram](https://github.com/New-Dev3/GitGram-Bot/)
+## Inspired From [New-Dev3's GitGram](https://github.com/New-Dev3/GitGram-Bot/)
 
 ## Run Bot: 
 ### Local Host
