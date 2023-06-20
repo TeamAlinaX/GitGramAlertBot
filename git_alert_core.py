@@ -19,9 +19,10 @@ from quart import Quart, jsonify, request
 from telethon import TelegramClient, __version__ as ve
 from config import Config as config
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
 gitalertapi = Quart(__name__)
 
-    
+
 port_ = config.PORT
 host = config.HOST
 log_chat = config.CHAT_ID
@@ -37,21 +38,18 @@ logging.getLogger("apscheduler").setLevel(logging.ERROR)
 if not config.BOT_TOKEN:
     logging.error("Who Will Give Me BOT_TOKEN? Don't You Want To Send Alerts?")
     quit(1)
-    
+
 if not config.API_ID:
     logging.error("Who Will Give Me API_ID? Telegram Will Kill me.")
     quit(1)
-    
+
 if not config.API_HASH:
     logging.error("Who Will Give Me API_ID? Telegram Will Kill me.")
     quit(1)
-   
-    
-gitbot = TelegramClient(
-        "mygitbot",
-        api_id=config.API_ID,
-        api_hash=config.API_HASH
-    )
+
+
+gitbot = TelegramClient("mygitbot", api_id=config.API_ID, api_hash=config.API_HASH)
+
 
 async def ping_app():
     app_url = "https://{}.herokuapp.com/".format(config.HEROKU_APP_NAME)
@@ -59,7 +57,6 @@ async def ping_app():
         async with session.get(app_url) as response:
             return response.status
     return 404
-
 
 
 @gitalertapi.route("/", methods=["GET", "POST"])
@@ -101,10 +98,12 @@ async def ghoo_k(chat):
     logging.info(f"Recieved : {siz_} Of Data.")
     try:
         msg_ = await gitbot.send_message(
-        chat, f"`Received {siz_} Bytes Of Data. Now Verifying..`"
-    )
+            chat, f"`Received {siz_} Bytes Of Data. Now Verifying..`"
+        )
     except BaseException as e:
-        logging.critical(f"Unable To Send Message To Chat. \nError : {e} \nApi is Exiting")
+        logging.critical(
+            f"Unable To Send Message To Chat. \nError : {e} \nApi is Exiting"
+        )
         return f"Error : {e}"
     if data.get("hook"):
         web_hook_done = f"**Webhooked 🔗** [{data['repository']['name']}]({data['repository']['html_url']}) **By ✨** [{data['sender']['login']}]({data['sender']['html_url']})"
@@ -234,18 +233,19 @@ Total forks count is now: __{data['repository']['forks_count']} ⚡️__
 
 @gitbot.on(events.NewMessage(pattern="^(!|/)(start|help)$"))
 async def bot_(message):
-    key_board = [[Button.url("Source Code", "https://github.com/TeamAlinaX/GitGramAlertBot")]]
+    key_board = [
+        [Button.url("Source Code", "https://github.com/TeamAlinaX/GitGramAlertBot")]
+    ]
     file = "https://te.legra.ph/file/79740aac5432ba43d4fb2.jpg"
     msg = f"__Hello__ {message.sender.first_name}. __I Am A Simple Git ALert Bot. I Notify In Chat When My Hook Gets Triggred From Github. You Can Find My Source Code on Github.com__"
-    await message.reply(
-        file=file, message=msg, buttons=key_board
-    )
-  
+    await message.reply(file=file, message=msg, buttons=key_board)
+
 
 if config.HEROKU_APP_NAME:
     scheduler = AsyncIOScheduler()
-    scheduler.add_job(ping_app, 'interval', minutes=config.PING_TIME)
+    scheduler.add_job(ping_app, "interval", minutes=config.PING_TIME)
     scheduler.start()
+
 
 async def run():
     logging.info("Starting Bot...")
@@ -256,6 +256,7 @@ async def run():
     config_.bind = [f"{host}:{port_}"]
     logging.info("Bot Started. Now Starting Server..")
     await hypercorn.asyncio.serve(gitalertapi, config_)
+
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()

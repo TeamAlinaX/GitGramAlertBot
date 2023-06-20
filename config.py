@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 if os.path.exists("local.env"):
     load_dotenv("local.env")
-   
+
 
 class Config(object):
     API_ID = int(os.environ.get("API_ID", 0))
