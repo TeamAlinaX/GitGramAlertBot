@@ -6,7 +6,7 @@
 ### Local Host
 
 * Git Clone Repo :
-- For Telethon Version : `git clone https://github.com/TeamAlinaX/GitGramAlertBot -b telethon`
+- For Telethon Version : `git clone https://github.com/TeamAlinaX/GitGramAlertBot`
 - For Pyrogram Version : `git clone https://github.com/TeamAlinaX/GitGramAlertBot -b pyrogram`
 * Make `local.env` File With the Values As Shown Below : 
 ```
