@@ -1,12 +1,12 @@
 # ~~Yet Another~~ GitAlertBot
 
-## Inspired From [Dev-v2's GitGram](https://github.com/New-Dev3/GitGram-Bot/)
+## Inspired From [Alone Dev](https://github.com/New-Dev3/GitGram-Bot/)
 
 ## Run Bot: 
 ### Local Host
 
 * Git Clone Repo :
-- For Telethon Version : `git clone https://github.com/TeamAlinaX/GitGramAlertBot`
+- For Telethon Version : `git clone https://github.com/TeamAlinaX/GitGramAlertBot -b telethon`
 - For Pyrogram Version : `git clone https://github.com/TeamAlinaX/GitGramAlertBot -b pyrogram`
 * Make `local.env` File With the Values As Shown Below : 
 ```
